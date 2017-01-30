@@ -85,7 +85,9 @@ print("Your opponent is", opponentPick.name)
 while(yourPick.health >= 0 and opponentPick.health >= 0):
     print(yourPick.name, "has", yourPick.health, "health left.", opponentPick.name, "has", opponentPick.health, "health left.")
     print(yourPick.name, "knows:\n", yourPick.move1, "\n", yourPick.move2, "\n", yourPick.move3, "\n", yourPick.move4)
-    yourMove = int(input("Type the number of the move you would like to use corresponding to the name as it appeared above.\n"))
+    yourMove = int(input("Type the number of the move you would like to use corresponding to the name as it appeared above. Pick '5' to regen 6% of your max health.\n"))
+    yourRegen = 0.06 * yourPick.health
+    opponentRegen = 0.06 * opponentPick.health
     if(yourMove == 1):
         Attack(0, 20)
         print(yourPick.name, "used", yourPick.move1, "\n")
@@ -98,10 +100,13 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
     elif(yourMove == 4):
         Attack(4, 25)
         print(yourPick.name, "used", yourPick.move4, "\n")
+    elif(yourMove == 5):
+        Attack(-1 * yourRegen, 0)
+        print(yourPick.name, "regenerated", yourRegen, "health points!")
     else:
         print("That is not a move")
         
-    opponentMove = random.randint(1,4)
+    opponentMove = random.randint(1,5)
 
     if (opponentMove == 1):
         Attack(20, 0)
@@ -115,6 +120,9 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
     elif(opponentMove == 4):
         Attack(25, 4)
         print(opponentPick.name, "used", opponentPick.move4, "\n")
+    elif(opponentMove == 5):
+        Attack(0, -1 * opponentRegen)
+        print(opponentPick.name, "regenerated", opponentRegen, "health points!")
     else:
         print("That is not a move")
 if yourPick.health >= 0 and opponentPick.health <= 0:
