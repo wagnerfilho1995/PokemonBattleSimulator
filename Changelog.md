@@ -1,7 +1,9 @@
 v1.8.2
-    +Added a notifier to let you know how well you did when you win, or how close you were when you lose. Your final health, or your opponent's final health will be displayed.
+    +Beginning to implement auto-regen
+    +Redesigned Pokemon creation algorithm, now each pokemon is represented in a list and is then accessible through that list
 v1.8.1
-    +Changed the regen from 6% to 10%
+    +Changed regen rate to 10% from 6%
+    +Displays health of last surviving pokemon
 v1.8
     +Added a regen feature, where instead of attacking, the Pokemon can regen 6% of its remaining health
     #Need to remove a move
