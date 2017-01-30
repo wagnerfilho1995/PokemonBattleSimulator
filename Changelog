@@ -1,3 +1,5 @@
+v1.8.1
+    +Changed the regen from 6% to 10%
 v1.8
     +Added a regen feature, where instead of attacking, the Pokemon can regen 6% of its remaining health
     #Need to remove a move
