@@ -1,3 +1,5 @@
+v1.8.2
+    +Added a notifier to let you know how well you did when you win, or how close you were when you lose. Your final health, or your opponent's final health will be displayed.
 v1.8.1
     +Changed the regen from 6% to 10%
 v1.8

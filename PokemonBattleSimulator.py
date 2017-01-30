@@ -126,8 +126,8 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
     else:
         print("That is not a move")
 if yourPick.health >= 0 and opponentPick.health <= 0:
-    print(yourPick.name, "won!")
+    print(yourPick.name, "won!", yourPick.name, "has", yourPick.health, "health points left!")
     print(opponentPick.name, "fainted.")
 else:
-    print("Sorry, better luck next time!")
+    print("Sorry, better luck next time!", opponentPick.name, "has", opponentPick.health, "health points left!")
     print(yourPick.name, "fainted.")
