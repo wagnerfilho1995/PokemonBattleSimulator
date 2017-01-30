@@ -1,3 +1,6 @@
+v1.8.1
+    +Changed regen rate to 10% from 6%
+    +Displays health of last surviving pokemon
 v1.8
     +Added a regen feature, where instead of attacking, the Pokemon can regen 6% of its remaining health
     #Need to remove a move
