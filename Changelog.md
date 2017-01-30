@@ -1,9 +1,6 @@
-<<<<<<< HEAD:Changelog
-=======
 v1.8.2
     +Beginning to implement auto-regen
     +Redesigned Pokemon creation algorithm, now each pokemon is represented in a list and is then accessible through that list
->>>>>>> upstream:Changelog.md
 v1.8.1
     +Changed regen rate to 10% from 6%
     +Displays health of last surviving pokemon
