@@ -45,11 +45,11 @@ def Attack(yourDamage, opponentDamage):
 Squirtle = Pokemon("Squirtle", "water", 120, "Water Gun", "Hydro Cannon", "Skull Bash", "Aqua Jet")
 Charmander = Pokemon("Charmander", "fire", 120, "Flamethrower", "Skull Bash", "Tackle", "Heat Crash")
 Bulbasaur = Pokemon("Bulbasaur", "grass", 120, "Vine Whip", "Grass Knot", "Tackle", "Energy Ball")
+Poke = [Squirtle, Charmander, Bulbasaur] #List of all Pokemon mentioned here
 
 #Explanation of Pokemon
-print("Squirtle is of type", Squirtle.element + ".", "It has", str(Squirtle.health) + " health.", "It knows", Squirtle.move1, ",", Squirtle.move2, ",", Squirtle.move3, ",and", Squirtle.move4 + ".", "\n")
-print("Charmander is of type", Charmander.element + ".", "It has", str(Charmander.health) + " health.", "It knows", Charmander.move1, ",", Charmander.move2, ",", Charmander.move3, ",and", Charmander.move4 + ".", "\n")
-print("Bulbasaur is of type", Bulbasaur.element + ".", "It has", str(Bulbasaur.health) + " health.", "It knows", Bulbasaur.move1, ",", Bulbasaur.move2, ",", Bulbasaur.move3, ",and", Bulbasaur.move4 + ".", "\n")
+for Pokemon in Poke:
+	print(Pokemon.name, "is of type", Pokemon.element + ".", "It has", str(Pokemon.health) + " health.", "It knows", Pokemon.move1, ",", Pokemon.move2, ",", Pokemon.move3, ",and", Pokemon.move4 + ".", "\n")
 
 #Asking User Input for which Pokemon they want to battle with
 yourSelection = int(input("Which Pokemon would you like to play with? Pick the corresponding number for that Pokemon"))
@@ -57,29 +57,29 @@ opponentSelection = random.random()
 
 #Setting a Pokemon to user
 if yourSelection == 1:
-    yourPick = Squirtle #NOTE: yourPick inherits methods of the other Poké
+    yourPick = Poke[0] #NOTE: yourPick inherits methods of the other Poké
     if opponentSelection >= 0.5:
-    	opponentPick = Charmander
+    	opponentPick = Poke[1]
     else:
-    	opponentPick = Bulbasaur
+    	opponentPick = Poke[2]
     print("You have picked to play with", yourPick.name)
 elif yourSelection == 2:
-    yourPick = Charmander
+    yourPick = Poke[1]
     if opponentSelection >= 0.5:
-    	opponentPick = Squirtle
+    	opponentPick = Poke[2]
     else:
-    	opponentPick = Bulbasaur
+    	opponentPick = Poke[0]
     print("You have picked to play with", yourPick.name)
 elif yourSelection == 3:
-	yourPick = Bulbasaur
+	yourPick = Poke[2]
 	if opponentSelection >= 0.5:
-		opponentPick = Charmander
+		opponentPick = Poke[0]
 	else:
-		opponentPick = Squirtle
+		opponentPick = Poke[1]
 	print("You have picked to play with", yourPick.name)
 else:
 	print("That is not a Pokemon. Try again")
-print("Your opponent is", opponentPick.name)
+print("Your opponent is", opponentPick.name, "\n")
 
 #Game Loop
 while(yourPick.health >= 0 and opponentPick.health >= 0):
@@ -126,8 +126,8 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
     else:
         print("That is not a move")
 if yourPick.health >= 0 and opponentPick.health <= 0:
-    print(yourPick.name, "won!")
+    print(yourPick.name, "won!", yourPick.name, "has", yourPick.health, "health points left.")
     print(opponentPick.name, "fainted.")
 else:
-    print("Sorry, better luck next time!")
+    print("Sorry, better luck next time!", opponentPick.name, "has", opponentPick.health, "health points left.")
     print(yourPick.name, "fainted.")
