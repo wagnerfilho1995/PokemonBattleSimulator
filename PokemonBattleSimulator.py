@@ -18,7 +18,7 @@ class Pokemon(object):
 	def __repr__(self):
 		return "I am a Pokemon"
 
-#Pokemon Move Function
+#Pokemon Move Function fire-water-grass effectivity
 def Attack(yourDamage, opponentDamage):
 	if yourPick.element == 'water' and opponentPick.element == 'fire':
 		yourTypeBonus = 2.0
