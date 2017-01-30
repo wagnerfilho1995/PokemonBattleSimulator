@@ -1,0 +1,6 @@
+v1.7.1
+    +Added the fire-water-grass type effectivity circle.
+    +Added Bulbasaur
+    +Added a random opponent selector (previously this was uneeded due to the fact there were only two pokemon)
+    -Removed Pikachu
+    -Removed electric type
