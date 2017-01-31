@@ -106,7 +106,7 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
     else:
         print("That is not a move, try again.")
     
-    opponentMove = random.randint(1,5)
+    opponentMove = random.randint(1,4)
 
     if (opponentMove == 1):
         Attack(20, 0)
@@ -120,9 +120,6 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
     elif(opponentMove == 4):
         Attack(25, 4)
         print(opponentPick.name, "used", opponentPick.move4, "\n")
-    elif(opponentMove == 5):
-        Attack(0, -1 * opponentRegen)
-        print(opponentPick.name, "regenerated", opponentRegen, "health points!")
     else:
         print("That is not a move")
 if yourPick.health >= 0 and opponentPick.health <= 0:

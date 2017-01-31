@@ -3,6 +3,7 @@ PokemonBattleSimulator is a python-based terminal-friendly version of pokemon ba
 #CHANGELOG
 <h2>v1.9.1</h2>
 +Fixed README.md
++Bug fixes
 <h2>v1.9</h2>
 +Added switch out feature
 +Bug fixes
