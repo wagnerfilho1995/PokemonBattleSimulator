@@ -85,9 +85,9 @@ print("Your opponent is", opponentPick.name, "\n")
 while(yourPick.health >= 0 and opponentPick.health >= 0):
     print(yourPick.name, "has", yourPick.health, "health left.", opponentPick.name, "has", opponentPick.health, "health left.")
     print(yourPick.name, "knows:\n", yourPick.move1, "\n", yourPick.move2, "\n", yourPick.move3, "\n", yourPick.move4)
-    yourMove = int(input("Type the number of the move you would like to use corresponding to the name as it appeared above. Pick '5' to regen 6% of your max health.\n"))
-    yourRegen = 0.06 * yourPick.health
-    opponentRegen = 0.06 * opponentPick.health
+    yourMove = int(input("Type the number of the move you would like to use corresponding to the name as it appeared above. Pick '5' to regen 10% of your remaining health.\n"))
+    yourRegen = 0.1 * yourPick.health
+    opponentRegen = 0.1 * opponentPick.health
     if(yourMove == 1):
         Attack(0, 20)
         print(yourPick.name, "used", yourPick.move1, "\n")

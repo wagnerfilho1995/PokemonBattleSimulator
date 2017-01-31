@@ -1,3 +1,5 @@
+v1.8.3
+    +Renamed Changelog.md to README.md
 v1.8.2
     +Beginning to implement auto-regen
     +Redesigned Pokemon creation algorithm, now each pokemon is represented in a list and is then accessible through that list
