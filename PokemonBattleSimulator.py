@@ -85,9 +85,7 @@ print("Your opponent is", opponentPick.name, "\n")
 while(yourPick.health >= 0 and opponentPick.health >= 0):
     print(yourPick.name, "has", yourPick.health, "health left.", opponentPick.name, "has", opponentPick.health, "health left.")
     print(yourPick.name, "knows:\n", yourPick.move1, "\n", yourPick.move2, "\n", yourPick.move3, "\n", yourPick.move4)
-    yourMove = int(input("Type the number of the move you would like to use corresponding to the name as it appeared above. Pick '5' to regen 10% of your remaining health.\n"))
-    yourRegen = 0.1 * yourPick.health
-    opponentRegen = 0.1 * opponentPick.health
+    yourMove = int(input("Type the number of the move you would like to use corresponding to the name as it appeared above. Pick '5' to switch out to a different pokemon.\n"))
     if(yourMove == 1):
         Attack(0, 20)
         print(yourPick.name, "used", yourPick.move1, "\n")
@@ -101,11 +99,13 @@ while(yourPick.health >= 0 and opponentPick.health >= 0):
         Attack(4, 25)
         print(yourPick.name, "used", yourPick.move4, "\n")
     elif(yourMove == 5):
-        Attack(-1 * yourRegen, 0)
-        print(yourPick.name, "regenerated", yourRegen, "health points!")
+        for Pokemon in Poke:
+            print(Pokemon.name, "is of type", Pokemon.element + ".", "It has", str(Pokemon.health) + " health.", "It knows", Pokemon.move1, ",", Pokemon.move2, ",", Pokemon.move3, ",and", Pokemon.move4 + ".", "\n")
+        x = int(input("Which pokemon would you like to play with? Pick the corressponding number:"))
+        yourPick = Poke[x - 1]
     else:
-        print("That is not a move")
-        
+        print("That is not a move, try again.")
+    
     opponentMove = random.randint(1,5)
 
     if (opponentMove == 1):

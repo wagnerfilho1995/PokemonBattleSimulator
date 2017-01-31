@@ -1,3 +1,11 @@
+#PokemonBattleSimulator
+PokemonBattleSimulator is a python-based terminal-friendly version of pokemon battling. You can choose one of (as of now) three Pokemon to play with and battle. Type effectivity works, but STAB isn't functioning properly. Don't forget to fork!
+#CHANGELOG
+<hr>
+v1.9
+    +Added switch out feature
+    +Bug fixes
+    -Removed regeneration, but will implement as a move for poke later on...
 v1.8.3
     +Renamed Changelog.md to README.md
 v1.8.2
