@@ -3,6 +3,7 @@ package me.pavva.PokemonBattleSimulator;
 import java.util.Scanner; //User input
 import java.util.Random; //Random numbers
 
+
 class Pokemon { //Pokemon Object Constructors and get-set methods
 
     private String name;
@@ -245,12 +246,19 @@ public class App { //Contains public static void main(String[] args) and the mai
                 
                 System.out.println("\nChoose the number that corresponds to the Pokemon you would like to play with in the list above.");
                 yourPick = s.nextInt();
-                yourPoke = poke[yourPick - 1];
+                
+                if (yourPick > poke.length) {
+                    s.close();
+                    throw new IllegalArgumentException(ANSI_RED + "Please pick a number between 1 and " + poke.length + "." + ANSI_RESET);
+                } else {
+                    yourPoke = poke[yourPick - 1];
+                }
+
                 
             } else {
                 
                 s.close();
-                throw new IllegalArgumentException("Please enter a number between 1 and 4, inclusive");
+                throw new IllegalArgumentException(ANSI_RED + "Please enter a number between 1 and 4, inclusive" + ANSI_RESET);
 
             }
             
