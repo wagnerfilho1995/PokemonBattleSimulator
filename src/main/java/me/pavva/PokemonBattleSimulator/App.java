@@ -1,7 +1,7 @@
 package me.pavva.PokemonBattleSimulator;
 
-import java.util.Scanner; //User input
-import java.util.Random; //Random numbers
+import java.util.*;
+// import java.lang.*;
 
 
 class Pokemon { //Pokemon Object Constructors and get-set methods
@@ -171,50 +171,23 @@ public class App { //Contains public static void main(String[] args) and the mai
                 opponentPoke.setHealth(opponentPoke.getHealth() - 30);
                 yourPoke.setHealth(yourPoke.getHealth() - 10);
                 System.out.println(yourPoke.getName() + " used " + yourPoke.getMove4() + " !");
+            
+                if (yourPick > poke.length) {
+                    
+                    System.gc();
+                    s.close();
+                    throw new IllegalArgumentException(ANSI_RED + "Please pick a number between 1 and " + poke.length + "." + ANSI_RESET);
                 
-            }                
-            else {
+                } else {
+                    yourPoke = poke[yourPick - 1];
+                }
+
+                
+            } else {
                 
                 s.close();
-                throw new IllegalArgumentException("Please enter a number between 1 and 4, inclusive");
-
-            }
-            
-            if (opponentPoke.getUsedMove() == 1) {
-
-                yourPoke.setHealth(yourPoke.getHealth() - 20);
-                System.out.println("The foe's " + opponentPoke.getName() + " used " + opponentPoke.getMove1() + "\n");
-
-            } else if (opponentPoke.getUsedMove() == 2) {
-
-                yourPoke.setHealth(yourPoke.getHealth() - 20);
-                System.out.println("The foe's " + opponentPoke.getName() + " used " + opponentPoke.getMove2() + "\n");
-
-            } else if (opponentPoke.getUsedMove() == 3) {
-
-                yourPoke.setHealth(yourPoke.getHealth() - 25);
-                opponentPoke.setHealth(opponentPoke.getHealth() - 5);
-                System.out.println("The foe's " + opponentPoke.getName() + " used " + opponentPoke.getMove3() + "\n");
-
-            } else if (opponentPoke.getUsedMove() == 4) {
-
-                yourPoke.setHealth(yourPoke.getHealth() - 30);
-                opponentPoke.setHealth(opponentPoke.getHealth() - 10);
-                System.out.println("The foe's " + opponentPoke.getName() + " used " + opponentPoke.getMove4() + "\n");
-
-            }
-
-            if (yourPoke.getHealth() < 0.0 && opponentPoke.getHealth() > 0.0) {
-                
-                System.out.println("Sorry, but your opponent won.");
-                System.out.println(yourPoke.getName() + " has fainted.");
-                System.out.println(opponentPoke.getName() + " has " + opponentPoke.getHealth() + " health left.");
-
-            } else if (yourPoke.getHealth() > 0.0 && opponentPoke.getHealth() < 0.0) {
-                
-                System.out.println("Congratulations! You won!");
-                System.out.println(opponentPoke.getName() + " has fainted.");
-                System.out.println(yourPoke.getName() + " has " + yourPoke.getHealth() + " health left.");
+                System.gc();
+                throw new IllegalArgumentException(ANSI_RED + "Please enter a number between 1 and 4, inclusive" + ANSI_RESET);
 
             }
 
@@ -222,7 +195,7 @@ public class App { //Contains public static void main(String[] args) and the mai
 
             if (opponentPoke.getUsedMove() == 1) {
 
-                yourPoke.setHealth(yourPoke.getHealth() - 20);
+                yourPoke.setHealth(yourPoke.getHealth() - 10);
                 System.out.println("The foe's " + opponentPoke.getName() + " used " + opponentPoke.getMove1() + "\n");
 
             } else if (opponentPoke.getUsedMove() == 2) {
@@ -344,7 +317,6 @@ public class App { //Contains public static void main(String[] args) and the mai
 	        play = s.nextInt();
 	    
         }
-        
         s.close();
 
     }
